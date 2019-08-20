@@ -1,26 +1,43 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from 'react';
+import { connect } from 'react-redux';
 
-function App() {
+//import './App.scss';
+
+import * as actions from './store/actions';
+
+const App = (props) => {
+  const { onAppStart } = props;
+  useEffect(() => {
+    onAppStart();
+  }, [onAppStart]);
+
+  if (props.loading) {
+    return <p>Spinner</p>
+  }
+
+  if (props.error) {
+    return <p>{props.error.message}</p>
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      cases collected
     </div>
   );
-}
+};
 
-export default App;
+const mapStateToProps = (state) => {
+  return {
+    cases: state.cases.cases,
+    isLoading: state.cases.isLoading,
+    error: state.cases.error
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    onAppStart: () => dispatch(actions.loadCases())
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
