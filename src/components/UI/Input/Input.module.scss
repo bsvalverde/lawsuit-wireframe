@@ -1,0 +1,16 @@
+.Input {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  background-color: #e5e5e5;
+  border: none;
+
+  &::placeholder {
+    color: #000;
+    transition: color 0.3s;
+  }
+
+  &:hover::placeholder, &:focus::placeholder {
+    color: rgba(0, 0, 0, 0.5);
+  }
+}

@@ -1,37 +1,31 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, Suspense } from 'react';
 import { connect } from 'react-redux';
-
-//import './App.scss';
+import { Redirect, Route } from 'react-router-dom';
 
 import * as actions from './store/actions';
 
+// import CasePage from './pages/cases/CasePage';
+// import DetailedCasePage from './pages/cases/DetailedCasePage';
+import MainPage from './pages/MainPage';
+
+import Layout from './containers/Layout/Layout';
+import Spinner from './components/UI/Spinner/Spinner';
+
 const App = (props) => {
   const { onAppStart } = props;
+
   useEffect(() => {
     onAppStart();
   }, [onAppStart]);
 
-  if (props.loading) {
-    return <p>Spinner</p>
-  }
-
-  if (props.error) {
-    return <p>{props.error.message}</p>
-  }
-
   return (
-    <div className="App">
-      cases collected
-    </div>
+    <Layout>
+      <Suspense fallback={<Spinner />}>
+        <Route path="/" exact component={MainPage} />
+        <Redirect to="/" />
+      </Suspense>
+    </Layout>
   );
-};
-
-const mapStateToProps = (state) => {
-  return {
-    cases: state.cases.cases,
-    isLoading: state.cases.isLoading,
-    error: state.cases.error
-  };
 };
 
 const mapDispatchToProps = (dispatch) => {
@@ -40,4 +34,4 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default connect(null, mapDispatchToProps)(App);

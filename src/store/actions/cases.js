@@ -5,8 +5,8 @@ import api from '../../services/api';
 const loadCasesStart = () => {
   return {
     type: actionTypes.LOAD_CASES_START
-  }
-}
+  };
+};
 
 const loadCasesSuccess = (cases) => {
   return {
@@ -31,6 +31,6 @@ export const loadCases = () => {
       })
       .catch(error => {
         dispatch(loadCasesFail(error));
-      })
+      });
   };
 };

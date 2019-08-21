@@ -1,0 +1,14 @@
+.Header {
+  height: 40px;
+  padding: 5px 0 40px;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  button {
+    top: 25%;
+    right: 0;
+    position: absolute;
+  }
+}
