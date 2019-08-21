@@ -4,12 +4,15 @@ import { Redirect, Route } from 'react-router-dom';
 
 import * as actions from './store/actions';
 
-// import CasePage from './pages/cases/CasePage';
 // import DetailedCasePage from './pages/cases/DetailedCasePage';
 import MainPage from './pages/MainPage';
 
 import Layout from './containers/Layout/Layout';
 import Spinner from './components/UI/Spinner/Spinner';
+
+const CasePage = React.lazy(() => {
+  return import('./pages/cases/CasePage');
+});
 
 const App = (props) => {
   const { onAppStart } = props;
@@ -21,6 +24,7 @@ const App = (props) => {
   return (
     <Layout>
       <Suspense fallback={<Spinner />}>
+        <Route path="/cases/:id" render={(props) => <CasePage {...props} />} />
         <Route path="/" exact component={MainPage} />
         <Redirect to="/" />
       </Suspense>

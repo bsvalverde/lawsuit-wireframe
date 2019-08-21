@@ -12,6 +12,6 @@ const DarkButton = (props) => {
       {props.children}
     </button>
   );
-}
+};
 
 export default DarkButton;

@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 import classes from './CaseSummary.module.scss';
 
@@ -25,7 +26,9 @@ const CaseSummary = (props) => {
       </td>
       <td>{legalCase.court}</td>
       <td>
-        <DarkButton>Ver</DarkButton>
+        <NavLink to={`/cases/${legalCase.id}`}>
+          <DarkButton>Ver</DarkButton>
+        </NavLink>
       </td>
     </tr>
   );
