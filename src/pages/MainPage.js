@@ -7,7 +7,8 @@ const MainPage = () => {
   return (
     <div>
       <Input placeholder="Pesquisar..."/>
-      <Cases />
+      <div style={{height: '20px'}}></div>
+      <Cases perPage={10}/>
     </div>
   );
 };

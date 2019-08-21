@@ -1,0 +1,13 @@
+.CaseSummary {
+  background-color: #f5f5f5;
+
+  img {
+    width: 65%;
+    position: relative;
+    top: 3px;
+
+    &.Lawsuit {
+      filter: invert(100%);
+    }
+  }
+}

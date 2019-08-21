@@ -1,0 +1,47 @@
+.Checkbox {
+  position: relative;
+  display: block;
+
+  input {
+    display: none;
+
+    &:checked {
+      ~ span:after {
+        display: block;
+      }
+    }
+  }
+
+
+  span {
+    position: absolute;
+    top: -8.5px;
+    left: 0;
+    height: 18px;
+    width: 18px;
+    background-color: #fff;
+    border-radius: 4px;
+    border: 1px solid #d5d5d5;
+    box-sizing: border-box;
+    transition: box-shadow 0.2s;
+
+    &:after {
+      content: "";
+      position: absolute;
+      display: none;
+      left: 5px;
+      top: 1px;
+      width: 4px;
+      height: 9px;
+      border: solid black;
+      border-width: 0 3px 3px 0;
+      transform: rotate(45deg);
+    }
+  }
+
+  &:hover {
+    span {
+      box-shadow: 0 0 2px #959595;
+    }
+  }
+}
