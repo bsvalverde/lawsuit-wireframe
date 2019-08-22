@@ -4,7 +4,6 @@ import { Redirect, Route } from 'react-router-dom';
 
 import * as actions from './store/actions';
 
-// import DetailedCasePage from './pages/cases/DetailedCasePage';
 import MainPage from './pages/MainPage';
 
 import Layout from './containers/Layout/Layout';

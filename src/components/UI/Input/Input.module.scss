@@ -1,8 +1,10 @@
+@import '../../../variables';
+
 .Input {
   width: 100%;
   padding: 10px;
   box-sizing: border-box;
-  background-color: #e5e5e5;
+  background-color: $darkgrey;
   border: none;
 
   &::placeholder {

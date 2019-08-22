@@ -1,3 +1,5 @@
+@import '../../variables';
+
 .CasesList {
   width: 100%;
   border: none;
@@ -5,16 +7,13 @@
   table-layout: fixed;
 
   th {
-    background-color: #e5e5e5;
+    background-color: $darkgrey;
   }
 
   td, th {
     text-align: left;
     padding: 10px;
-    border-bottom: 10px solid #fff;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    border-bottom: 10px solid $white;
 
     &:nth-child(1), &:nth-child(2), &:nth-child(4) {
       text-align: center;

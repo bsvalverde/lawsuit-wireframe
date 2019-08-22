@@ -13,18 +13,21 @@ const CaseSummary = (props) => {
   const typeClass = legalCase.type === 'CTE_CASE'
     ? null
     : classes.Lawsuit;
+
   return (
     <tr className={classes.CaseSummary}>
       <td><Checkbox /></td>
       <td><img className={typeClass} src={folder} alt={legalCase.type} /></td>
-      <td>{legalCase.title}</td>
-      <td>{legalCase.file}</td>
+      <td><p>{legalCase.title}</p></td>
+      <td><p>{legalCase.file || '-'}</p></td>
       <td>
-        {legalCase.lawsuitType}
-        {legalCase.lawsuitType && legalCase.number && "/"}
-        {legalCase.number}
+        <p>
+          {legalCase.lawsuitType}
+          {legalCase.lawsuitType && legalCase.number && "/"}
+          {legalCase.number}
+        </p>
       </td>
-      <td>{legalCase.court}</td>
+      <td><p>{legalCase.court || '-'}</p></td>
       <td>
         <NavLink to={`/cases/${legalCase.id}`}>
           <DarkButton>Ver</DarkButton>

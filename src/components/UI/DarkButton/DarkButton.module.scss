@@ -1,7 +1,9 @@
+@import '../../../variables';
+
 .DarkButton {
   padding: 5px 15px;
-  background-color: #2b2b2b;
-  color: #fff;
+  background-color: $sepia;
+  color: $white;
   text-align: center;
   border: none;
   border-radius: 5px;

@@ -10,7 +10,6 @@ import Spinner from '../../components/UI/Spinner/Spinner';
 
 const Cases = (props) => {
   const [casesPerPage, setCasesPerPage] = useState(props.perPage);
-  const [checkboxSelected, setCheckboxSelected] = useState(false);
 
   if (props.isLoading) {
     return <Spinner />;
@@ -23,10 +22,6 @@ const Cases = (props) => {
   if (props.cases.length === 0) {
     return <p>Nada</p>
   }
-
-  const toggleCheckbox = (event) => {
-    setCheckboxSelected(event.target.checked);
-  };
 
   const loadMore = () => {
     setCasesPerPage(prevCasesPerPage => prevCasesPerPage + props.perPage);
@@ -44,7 +39,7 @@ const Cases = (props) => {
       <table className={classes.CasesList}>
         <thead>
           <tr>
-            <th><Checkbox onChange={toggleCheckbox} /></th>
+            <th><Checkbox /></th>
             <th>Tipo</th>
             <th>Título/Cliente</th>
             <th>Pasta</th>
@@ -54,10 +49,19 @@ const Cases = (props) => {
           </tr>
         </thead>
         <tbody>
-          { shownCases.map(legalCase => <CaseSummary key={legalCase.id} case={legalCase} checked={checkboxSelected} />) }
+          { shownCases.map(legalCase =>
+              <CaseSummary
+                key={legalCase.id}
+                case={legalCase}
+              />
+            )
+          }
         </tbody>
       </table>
-      { !allCasesShown && <GreyButton onClick={loadMore} >Carregar mais</GreyButton> }
+      {
+        allCasesShown
+        || <GreyButton onClick={loadMore} >Carregar mais</GreyButton>
+      }
     </Fragment>
   );
 };

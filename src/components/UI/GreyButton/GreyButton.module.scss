@@ -1,7 +1,9 @@
+@import '../../../variables';
+
 .GreyButton {
   width: 100%;
   padding: 10px;
-  background-color: #f5f5f5;
+  background-color: $lightgrey;
   text-align: center;
   border: none;
   cursor: pointer;
