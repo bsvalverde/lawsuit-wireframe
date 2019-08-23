@@ -82,12 +82,7 @@ const Cases = (props) => {
             </th>
             <th>Pasta</th>
             <th>Ação/Número</th>
-            <th>Foro
-              <UpDownArrowsButton
-                selected={orderCasesBy.key === 'court'}
-                ascending={orderCasesBy.ascending}
-                onClick={() => orderByField('court')}
-              /></th>
+            <th>Foro</th>
             <th></th>
           </tr>
         </thead>
