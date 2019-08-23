@@ -68,7 +68,7 @@ const Cases = (props) => {
 
 const mapStateToProps = (state) => {
   return {
-    cases: state.cases.cases,
+    cases: state.cases.filteredCases,
     isLoading: state.cases.isLoading,
     error: state.cases.error
   };

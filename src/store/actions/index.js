@@ -1,3 +1,4 @@
 export {
-  loadCases
+  loadCases,
+  filterByTitle
 } from './cases';

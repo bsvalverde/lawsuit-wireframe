@@ -5,11 +5,11 @@ import classes from './Input.module.scss';
 const Input = (props) => {
   const [inputValue, setInputValue] = useState('');
 
-  // const { onUserType } = props;
-  // useEffect(() => {
-  //   const timer = setTimeout(onUserType, 1000);
-  //   return () => clearTimeout(timer);
-  // }, [inputValue, onUserType])
+  const { onUserType } = props;
+  useEffect(() => {
+    const timer = setTimeout(() => onUserType(inputValue), 1000);
+    return () => clearTimeout(timer);
+  }, [inputValue, onUserType])
 
   return (
     <input

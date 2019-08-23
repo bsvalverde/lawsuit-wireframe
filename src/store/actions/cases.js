@@ -34,3 +34,10 @@ export const loadCases = () => {
       });
   };
 };
+
+export const filterByTitle = (title) => {
+  return {
+    type: actionTypes.FILTER_BY_TITLE,
+    title: title
+  };
+};
