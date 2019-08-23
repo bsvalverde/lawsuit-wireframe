@@ -49,12 +49,12 @@ const Cases = (props) => {
     setCasesPerPage(prevCasesPerPage => prevCasesPerPage + props.perPage);
   };
 
-  const orderByTitle = () => {
+  const orderByField = (key) => {
     setOrderCasesBy(prevState => {
       return {
-        key: 'title',
-        ascending: prevState.key !== 'title' || !prevState.ascending,
-        numeric: false
+        key: key,
+        ascending: prevState.key !== key || !prevState.ascending,
+        numeric: key === 'id'
       };
     });
   };
@@ -77,12 +77,17 @@ const Cases = (props) => {
               <UpDownArrowsButton
                 selected={orderCasesBy.key === 'title'}
                 ascending={orderCasesBy.ascending}
-                onClick={orderByTitle}
+                onClick={() => orderByField('title')}
               />
             </th>
             <th>Pasta</th>
             <th>Ação/Número</th>
-            <th>Foro</th>
+            <th>Foro
+              <UpDownArrowsButton
+                selected={orderCasesBy.key === 'court'}
+                ascending={orderCasesBy.ascending}
+                onClick={() => orderByField('court')}
+              /></th>
             <th></th>
           </tr>
         </thead>
