@@ -38,11 +38,11 @@ const Cases = (props) => {
   }
 
   if (props.error) {
-    return <p>{props.error.message}</p>;
+    return <p className={classes.Message}>Houve um erro. Por favor recarregue a página.</p>;
   }
 
   if (cases.length === 0) {
-    return <p>Nada</p>
+    return <p className={classes.Message}>Nenhum processo encontrado.</p>
   }
 
   const loadMore = () => {

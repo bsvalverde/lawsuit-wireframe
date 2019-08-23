@@ -1,5 +1,11 @@
 @import '../../variables';
 
+.Message {
+  padding: 10px;
+  text-align: center;
+  background-color: $lightgrey;
+}
+
 .CasesList {
   width: 100%;
   border: none;
