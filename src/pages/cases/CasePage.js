@@ -1,20 +1,35 @@
-import React from 'react';
+import React, { Fragment, useState } from 'react';
 import { connect } from 'react-redux';
 
 import classes from './CasePage.module.scss';
 
 import ClearButton from '../../components/UI/ClearButton/ClearButton';
+import HistoryModal from '../../components/Cases/HistoryModal/HistoryModal';
 
 const CasePage = (props) => {
+  const [showHistory, setShowHistory] = useState(false);
+
   const legalCase = props.cases.find(legalCase =>
     legalCase.id === props.match.params.id
   );
 
+  const viewHistory = () => {
+    setShowHistory(true);
+  };
+
+  const hideHistory = () => {
+    setShowHistory(false);
+  }
+
+  const history = showHistory
+    && <HistoryModal case={legalCase} close={hideHistory} />;
+
   return (
+    <Fragment>
     <div className={classes.CasePage}>
       <div className={classes.Header}>
         <label className={classes.Title}>{legalCase.title}</label>
-        <ClearButton>Visualizar históricos</ClearButton>
+        { showHistory || <ClearButton onClick={viewHistory}>Visualizar históricos</ClearButton> }
       </div>
       <div className={classes.Box}>
         <div className={classes.Item}>
@@ -61,6 +76,8 @@ const CasePage = (props) => {
         </div>
       </div>
     </div>
+    {history}
+    </Fragment>
   );
 };
 
