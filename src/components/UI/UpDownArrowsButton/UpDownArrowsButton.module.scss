@@ -1,0 +1,65 @@
+.Container {
+  display: inline;
+  position: absolute;
+
+  button {
+    height: 20px;
+    margin: 5px;
+    top: -7px;
+    cursor: pointer;
+    border:none;
+    background-color: transparent;
+    position: relative;
+
+    &:hover {
+      box-shadow: 0 0 2px black;
+    }
+
+    &.Arrows, &.Up {
+      &:before {
+        content: " ";
+        width: 0;
+        height: 0;
+        border-width: 5px;
+        border-style: solid;
+        border-color: transparent transparent black transparent;
+        position: absolute;
+      }
+    }
+
+    &.Arrows, &.Down {
+      &:after {
+        content: " ";
+        width: 0;
+        height: 0;
+        border-width: 5px;
+        border-style: solid;
+        border-color: black transparent transparent transparent;
+        position: absolute;
+      }
+    }
+
+
+    &.Arrows {
+      &:before {
+        transform: translate(-5px, -12px);
+      }
+
+      &:after {
+        transform: translate(-5px, 1px);
+      }
+    }
+
+    &.Up {
+      &:before {
+        transform: translate(-5px, -8px);
+      }
+    }
+
+    &.Down {
+      &:after {
+        transform: translate(-5px, -3px);
+      }
+    }
+  }
+}
