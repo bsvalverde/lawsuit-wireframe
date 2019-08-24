@@ -1,0 +1,22 @@
+{
+  "action": "Ação",
+  "client": "Cliente",
+  "court": "Foro",
+  "courtLink": "Link no tribunal",
+  "date" : "{{date, DD/MM/YYYY}}",
+  "folder": "Pasta",
+  "goBack": "Voltar",
+  "historics": "Históricos",
+  "judgment": "Juízo",
+  "leave": "Sair",
+  "loading": "Carregando...",
+  "loadingError": "Houve um erro. Por favor recarregue a página.",
+  "loadMore": "Carregar mais",
+  "look": "Ver",
+  "nothingToShow": "Nada para mostrar.",
+  "number": "Número",
+  "search": "Pesquisar...",
+  "title": "Título",
+  "type": "Tipo",
+  "viewHistorics": "Visualizar históricos"
+}

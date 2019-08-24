@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { NavLink } from 'react-router-dom';
 
 import classes from './CaseSummary.module.scss';
@@ -9,6 +10,8 @@ import Checkbox from '../../UI/Checkbox/Checkbox';
 import DarkButton from '../../UI/DarkButton/DarkButton';
 
 const CaseSummary = (props) => {
+  const { t } = useTranslation();
+
   const legalCase = props.case;
   const typeClass = legalCase.type === 'CTE_CASE'
     ? null
@@ -30,7 +33,7 @@ const CaseSummary = (props) => {
       <td><p>{legalCase.court || '-'}</p></td>
       <td>
         <NavLink to={`/cases/${legalCase.id}`}>
-          <DarkButton>Ver</DarkButton>
+          <DarkButton>{t('look')}</DarkButton>
         </NavLink>
       </td>
     </tr>

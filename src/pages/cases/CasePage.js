@@ -1,4 +1,5 @@
 import React, { Fragment, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 
 import classes from './CasePage.module.scss';
@@ -8,6 +9,7 @@ import HistoryModal from '../../components/Cases/HistoryModal/HistoryModal';
 
 const CasePage = (props) => {
   const [showHistory, setShowHistory] = useState(false);
+  const { t } = useTranslation();
 
   const legalCase = props.cases.find(legalCase =>
     legalCase.id === props.match.params.id
@@ -29,11 +31,11 @@ const CasePage = (props) => {
     <div className={classes.CasePage}>
       <div className={classes.Header}>
         <label className={classes.Title}>{legalCase.title}</label>
-        { showHistory || <ClearButton onClick={viewHistory}>Visualizar históricos</ClearButton> }
+        { showHistory || <ClearButton onClick={viewHistory}>{t('viewHistorics')}</ClearButton> }
       </div>
       <div className={classes.Box}>
         <div className={classes.Item}>
-          <label>Link no tribunal</label>
+          <label>{t('courtLink')}</label>
           <p>
             <a
               href="https://esaj.tjsc.jus.br"
@@ -43,11 +45,11 @@ const CasePage = (props) => {
             </p>
         </div>
         <div className={classes.Item}>
-          <label>Ação</label>
+          <label>{t('action')}</label>
           <p>{legalCase.lawsuitType}</p>
         </div>
         <div className={classes.Item}>
-          <label>Juízo</label>
+          <label>{t('judgment')}</label>
           <p>{legalCase.type}</p>
         </div>
         <div className={classes.Item}>

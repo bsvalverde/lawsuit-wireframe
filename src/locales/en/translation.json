@@ -1,0 +1,22 @@
+{
+  "action": "Action",
+  "client": "Client",
+  "court": "Court",
+  "courtLink": "Link in court",
+  "date" : "{{date, MM/DD/YYYY}}",
+  "folder": "Folder",
+  "goBack": "Go back",
+  "historics": "Historics",
+  "judgment": "Judgment",
+  "leave": "Leave",
+  "loading": "Loading...",
+  "loadingError": "There was an error. Please reload the page.",
+  "loadMore": "Load more",
+  "look": "Look",
+  "nothingToShow": "Nothing to show.",
+  "number": "Number",
+  "search": "Search...",
+  "title": "Title",
+  "type": "Type",
+  "viewHistorics": "View historics"
+}

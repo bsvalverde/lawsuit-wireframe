@@ -1,4 +1,5 @@
 import React, { Fragment, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 
 import classes from './Cases.module.scss';
@@ -12,6 +13,8 @@ import UpDownArrowsButton from '../../components/UI/UpDownArrowsButton/UpDownArr
 const Cases = (props) => {
   const [orderCasesBy, setOrderCasesBy] = useState({key: 'id', ascending: true, numeric: true});
   const [casesPerPage, setCasesPerPage] = useState(props.perPage);
+
+  const { t } = useTranslation();
 
   const orderCasesByString = (caseA, caseB) => {
     if (caseA[orderCasesBy.key].toUpperCase() > caseB[orderCasesBy.key].toUpperCase()) {
@@ -38,11 +41,11 @@ const Cases = (props) => {
   }
 
   if (props.error) {
-    return <p className={classes.Message}>Houve um erro. Por favor recarregue a página.</p>;
+    return <p className={classes.Message}>{t('errorLoading')}</p>;
   }
 
   if (cases.length === 0) {
-    return <p className={classes.Message}>Nenhum processo encontrado.</p>
+    return <p className={classes.Message}>{t('nothingToShow')}</p>
   }
 
   const loadMore = () => {
@@ -72,17 +75,17 @@ const Cases = (props) => {
         <thead>
           <tr>
             <th><Checkbox /></th>
-            <th>Tipo</th>
-            <th>Título/Cliente
+            <th>{t('type')}</th>
+            <th>{t('title')}/{t('client')}
               <UpDownArrowsButton
                 selected={orderCasesBy.key === 'title'}
                 ascending={orderCasesBy.ascending}
                 onClick={() => orderByField('title')}
               />
             </th>
-            <th>Pasta</th>
-            <th>Ação/Número</th>
-            <th>Foro</th>
+            <th>{t('folder')}</th>
+            <th>{t('action')}/{t('number')}</th>
+            <th>{t('court')}</th>
             <th></th>
           </tr>
         </thead>
@@ -98,7 +101,7 @@ const Cases = (props) => {
       </table>
       {
         allCasesShown
-        || <GreyButton onClick={loadMore} >Carregar mais</GreyButton>
+        || <GreyButton onClick={loadMore} >{t('loadMore')}</GreyButton>
       }
     </Fragment>
   );
