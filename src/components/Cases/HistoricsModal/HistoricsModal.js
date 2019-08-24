@@ -2,20 +2,20 @@ import i18n from 'i18next';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 
-import classes from './HistoryModal.module.scss';
+import classes from './HistoricsModal.module.scss';
 
 import cloud from '../../../assets/icons/cloud.svg';
 
 import Backdrop from '../../UI/Backdrop/Backdrop';
 
-const HistoryModal = (props) => {
+const HistoricsModal = (props) => {
   const { t } = useTranslation();
 
   const legalCase = props.case;
 
-  let history = <p className={classes.Empty}>{t('nothingToShow')}</p>
+  let historics = <p className={classes.Empty}>{t('nothingToShow')}</p>
   if (legalCase.historicals.length > 0) {
-    history = (
+    historics = (
       <table>
         <tbody>
           {
@@ -45,11 +45,11 @@ const HistoryModal = (props) => {
         ></button>
       <div className={classes.Box}>
         <p className={classes.Title}>{t('historics')}</p>
-        { history }
+        { historics }
       </div>
       </div>
     </Backdrop>
   );
 };
 
-export default HistoryModal;
+export default HistoricsModal;

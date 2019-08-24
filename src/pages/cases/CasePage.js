@@ -5,33 +5,33 @@ import { connect } from 'react-redux';
 import classes from './CasePage.module.scss';
 
 import ClearButton from '../../components/UI/ClearButton/ClearButton';
-import HistoryModal from '../../components/Cases/HistoryModal/HistoryModal';
+import HistoricsModal from '../../components/Cases/HistoricsModal/HistoricsModal';
 
 const CasePage = (props) => {
-  const [showHistory, setShowHistory] = useState(false);
+  const [showHistorics, setShowHistorics] = useState(false);
   const { t } = useTranslation();
 
   const legalCase = props.cases.find(legalCase =>
     legalCase.id === props.match.params.id
   );
 
-  const viewHistory = () => {
-    setShowHistory(true);
+  const viewHistorics = () => {
+    setShowHistorics(true);
   };
 
-  const hideHistory = () => {
-    setShowHistory(false);
+  const hideHistorics = () => {
+    setShowHistorics(false);
   }
 
-  const history = showHistory
-    && <HistoryModal case={legalCase} close={hideHistory} />;
+  const historics = showHistorics
+    && <HistoricsModal case={legalCase} close={hideHistorics} />;
 
   return (
     <Fragment>
     <div className={classes.CasePage}>
       <div className={classes.Header}>
         <label className={classes.Title}>{legalCase.title}</label>
-        { showHistory || <ClearButton onClick={viewHistory}>{t('viewHistorics')}</ClearButton> }
+        { showHistorics || <ClearButton onClick={viewHistorics}>{t('viewHistorics')}</ClearButton> }
       </div>
       <div className={classes.Box}>
         <div className={classes.Item}>
@@ -78,7 +78,7 @@ const CasePage = (props) => {
         </div>
       </div>
     </div>
-    {history}
+    {historics}
     </Fragment>
   );
 };
