@@ -7,7 +7,7 @@ import classes from './CasePage.module.scss';
 import ClearButton from '../../components/UI/ClearButton/ClearButton';
 import HistoricsModal from '../../components/Cases/HistoricsModal/HistoricsModal';
 
-const CasePage = (props) => {
+export const CasePage = (props) => {
   const [showHistorics, setShowHistorics] = useState(false);
   const { t } = useTranslation();
 

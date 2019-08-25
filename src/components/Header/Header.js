@@ -7,7 +7,7 @@ import classes from './Header.module.scss';
 import ClearButton from '../UI/ClearButton/ClearButton';
 import Logo from '../Logo/Logo';
 
-const Header = (props) => {
+export const Header = (props) => {
   const { t } = useTranslation();
 
   const goBack = () => {

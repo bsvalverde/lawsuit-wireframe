@@ -5,6 +5,8 @@ import React from 'react';
 import HistoricsModal from './HistoricsModal';
 import classes from './HistoricsModal.module.scss';
 
+import i18n from '../../../i18n';
+
 configure({adapter: new Adapter()});
 
 describe('<HistoricsModal />', () => {

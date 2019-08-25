@@ -10,7 +10,7 @@ import GreyButton from '../../components/UI/GreyButton/GreyButton';
 import Spinner from '../../components/UI/Spinner/Spinner';
 import UpDownArrowsButton from '../../components/UI/UpDownArrowsButton/UpDownArrowsButton';
 
-const Cases = (props) => {
+export const Cases = (props) => {
   const [orderCasesBy, setOrderCasesBy] = useState({key: 'id', ascending: true, numeric: true});
   const [casesPerPage, setCasesPerPage] = useState(props.perPage);
 
@@ -41,7 +41,7 @@ const Cases = (props) => {
   }
 
   if (props.error) {
-    return <p className={classes.Message}>{t('errorLoading')}</p>;
+    return <p className={classes.Message}>{t('loadingError')}</p>;
   }
 
   if (cases.length === 0) {
