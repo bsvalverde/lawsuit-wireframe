@@ -1,68 +1,35 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Getting started
 
-## Available Scripts
+After downloading the project and navigating to its folder, it is necessary to run:
 
-In the project directory, you can run:
+### `npm install`
+
+After installation is complete, the project can be started by running:
 
 ### `npm start`
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+If the browser is not automatically started, the project can be found on [http://localhost:3000](http://localhost:3000).
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+## The project
+
+The App will automatically retrieve the data from the backend API. If there is a communication error, refreshing the page will cause the App to retry the connection.
+
+After the data is loaded, typing anything on the search input field will cause the cases to be filtered by title. Clicking on the arrows beside the title column header will reorder the cases alphabetically, in descending or ascending order as indicated by the arrow direction.
+
+There is a limit to how many cases are shown. Clicking the `Load more` button at the end of the page will increase the limit, causing more cases to be shown at once.
+
+Clicking the dark button at the end of each row will open a detailed page on that specific case.
+
+In this page, clicking on the `View historics` button above the box, on the right, will open a modal showing the case's historics. The modal can be closed by clickin on the white X button above it.
+
+To return to the main page, the `Go back` button on the upper right corner may be clicked.
+
+## Internationalization
+
+To change the language of the app, the `src/i18n.js` file may be edited. By changing line 10 from `lng: 'en',` to `lng: 'pt-br'` all the text will be shown in portuguese. Currently these are the only available languages.
+
+## Tests
+
+The test runner in interactive watch mode can be started by running:
 
 ### `npm test`
-
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
