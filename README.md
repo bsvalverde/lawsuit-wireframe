@@ -26,7 +26,7 @@ To return to the main page, the `Go back` button on the upper right corner may b
 
 ## Internationalization
 
-To change the language of the app, the `src/i18n.js` file may be edited. By changing line 10 from `lng: 'en',` to `lng: 'pt-br'` all the text will be shown in portuguese. Currently these are the only available languages.
+To change the language of the app, the `src/i18n.js` file may be edited. By changing line 10 from `lng: 'en',` to `lng: 'pt-br',` all the text will be shown in portuguese. Currently these are the only available languages.
 
 ## Tests
 
